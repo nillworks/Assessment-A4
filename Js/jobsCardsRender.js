@@ -129,8 +129,7 @@ function renderAllAvailableJobs(jobs) {
   // Dom Updates
   for (const job of jobs) {
     const div = document.createElement('div');
-    div.classList =
-      'bg-white py-8 px-4 rounded-lg space-y-4 border shadow-sm border-gray-200 transition duration-300 hover:-translate-y-1 cursor-pointer';
+    div.classList = `bg-white py-8 px-4 rounded-lg space-y-4 shadow-sm  transition duration-300 hover:-translate-y-1 cursor-pointer ${borderAddColorChange(job?.status)}`;
     div.innerHTML = `
     <!-- Title And Delete btn -->
             <div class="flex justify-between items-center">
@@ -161,7 +160,7 @@ function renderAllAvailableJobs(jobs) {
 
             <!-- NOT APPLIED BTN -->
             <div>
-              <button class="btn bg-[#EEF4FF] text-hadingColor uppercase outline-none border-none">${job?.status}</button>
+              <p class="btn bg-[#EEF4FF]  ${colorChangeApplied(job?.status)} uppercase outline-none border-none">${job?.status}</p>
             </div>
 
             <!-- Description -->
@@ -210,8 +209,7 @@ function renderInterviewJobs() {
 
   for (const interviewJob of interviewJobsFilter) {
     const div = document.createElement('div');
-    div.classList =
-      'bg-white py-8 px-4 rounded-lg space-y-4 border shadow-sm border-gray-200 transition duration-300 hover:-translate-y-1 cursor-pointer';
+    div.classList = `bg-white py-8 px-4 rounded-lg space-y-4 shadow-sm transition duration-300 hover:-translate-y-1 cursor-pointer ${borderAddColorChange(interviewJob?.status)}`;
 
     div.innerHTML = `
   
@@ -244,7 +242,7 @@ function renderInterviewJobs() {
 
             <!-- NOT APPLIED BTN -->
             <div>
-              <button class="btn bg-[#EEF4FF] text-hadingColor uppercase outline-none border-none">${interviewJob?.status}</button>
+              <p class="btn  ${colorChangeApplied(interviewJob?.status)} bg-[#EEF4FF] uppercase outline-none border-none">${interviewJob?.status}</p>
             </div>
 
             <!-- Description -->
@@ -279,8 +277,7 @@ function renderRejectedJobs() {
 
   for (const rejectedJob of rejectedJobs) {
     const div = document.createElement('div');
-    div.classList =
-      'bg-white py-8 px-4 rounded-lg space-y-4 border shadow-sm border-gray-200 transition duration-300 hover:-translate-y-1 cursor-pointer';
+    div.classList = `bg-white py-8 px-4 rounded-lg space-y-4 shadow-sm transition duration-300 hover:-translate-y-1 cursor-pointer ${borderAddColorChange(rejectedJob?.status)}`;
 
     div.innerHTML = `
     
@@ -313,7 +310,7 @@ function renderRejectedJobs() {
 
             <!-- NOT APPLIED BTN -->
             <div>
-              <button class="btn bg-[#EEF4FF] text-hadingColor uppercase outline-none border-none">${rejectedJob?.status}</button>
+              <p class="btn bg-[#EEF4FF]  ${colorChangeApplied(rejectedJob?.status)} uppercase outline-none border-none">${rejectedJob?.status}</p>
             </div>
 
             <!-- Description -->
@@ -343,6 +340,20 @@ function updateJobStatus(id, status) {
   renderAllAvailableJobs(jobs);
   renderInterviewJobs();
   renderRejectedJobs();
+}
+
+// Interview and Rejected Color Change
+function colorChangeApplied(status) {
+  if (status === 'Interview') return 'text-success';
+  if (status === 'Rejected') return 'text-error';
+  return 'text-hadingColor';
+}
+
+// Change Cards left Border Function
+function borderAddColorChange(status) {
+  if (status === 'Interview') return 'border-l-4 border-success';
+  if (status === 'Rejected') return 'border-l-4 border-error';
+  return 'border-l-4 border-grayColor';
 }
 
 // Render All Function

@@ -28,7 +28,6 @@ function toggleStyle(id) {
   } else if (id === 'interviewAvailableButton') {
     document.getElementById('interviewSection').classList.remove('hidden');
     document.getElementById('interviewOfCounts').classList.remove('hidden');
-    // const crateInterviewCount = document.createElement('p');
   } else if (id === 'rejectedAvailableJobs') {
     document.getElementById('rejectedSection').classList.remove('hidden');
     document.getElementById('rejectedOfCounts').classList.remove('hidden');
