@@ -63,6 +63,139 @@
   </header>
 
 
+  <!-- Main Area -->
+  <main>
+
+    <!-- Job Cards section -->
+    <section class="paddingXl">
+
+      <div class="containers">
+
+        <!-- Title And 3 Button -->
+        <div class="space-y-4">
+
+          <div class="flex justify-between">
+            <!-- title -->
+            <div>
+              <h2 class="text-3xl font-bold text-hadingColor">Available Jobs</h2>
+            </div>
+
+            <!-- Counts jobs -->
+            <div class="flex gap-2 items-center">
+
+              <!-- interview Count of -->
+              <p id="interviewOfCounts" class="hidden flex gap-1 text-lg font-medium text-grayColor">
+                <span id="interviewCountNumber">0</span>
+                <span>of</span>
+              </p>
+
+              <!-- Rejected Count of -->
+              <p id="rejectedOfCounts" class="hidden flex gap-1 text-lg font-medium text-grayColor">
+                <span id="rejectedCountNumber">0</span>
+                <span>of</span>
+              </p>
+
+              <!-- All Counts of-->
+              <p class="text-lg font-medium text-grayColor"><span id="AllJobs"
+                  class="text-hadingColor text-lg font-medium">0</span>
+                Jobs</p>
+
+
+            </div>
+
+          </div>
+
+          <!-- buttons 3 -->
+          <div>
+            <button onclick="toggleStyle('allAvailableJobButton')" id="allAvailableJobButton"
+              class="btn bg-primaryColor text-white">All</button>
+            <button onclick="toggleStyle('interviewAvailableButton')" id="interviewAvailableButton"
+              class="btn text-grayColor">Interview</button>
+            <button onclick="toggleStyle('rejectedAvailableJobs')" id="rejectedAvailableJobs"
+              class="btn text-grayColor">Rejected</button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- All Available Jobs Section -->
+    <section id="allSection" class="sections paddingXl">
+      <div class="containers py-5">
+
+        <!-- No Jobs Available -->
+        <div id="noJobsAvailable"
+          class="hidden bg-white py-25  flex-col items-center justify-center text-center rounded-md">
+          <img src="images/jobs.png" alt="img" class="mx-auto">
+          <h2 class="text-hadingColor font-semibold text-lg">No jobs available</h2>
+          <p class="text-grayColor">Check back soon for new job opportunities</p>
+        </div>
+
+        <!-- All Jobs Cards -->
+        <div id="AllJobsCards" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- all card renders completes -->
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- Interview Available Jobs Section -->
+    <section id="interviewSection" class="sections paddingXl hidden">
+      <div class="containers">
+
+        <!-- No Jobs Available -->
+        <div id="noAvailableInterviewJobs" class="bg-white py-25 flex flex-col items-center justify-center rounded-md">
+          <img src="images/jobs.png" alt="img" class="mx-auto">
+          <h2 class="text-hadingColor font-semibold text-lg">No jobs available</h2>
+          <p class="text-grayColor">Check back soon for new job opportunities</p>
+        </div>
+
+        <!-- All Interview Cards  -->
+        <div>
+          <div id="AllInterviewCards">
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- Rejected Available Jobs Section -->
+    <section id="rejectedSection" class="sections paddingXl hidden">
+      <div class="containers">
+
+        <!-- No Jobs Available -->
+        <div id="rejectedNoJobsAvailable" class="bg-white py-25 flex flex-col items-center justify-center rounded-md">
+          <img src="images/jobs.png" alt="img" class="mx-auto">
+          <h2 class="text-hadingColor font-semibold text-lg">No jobs available</h2>
+          <p class="text-grayColor">Check back soon for new job opportunities</p>
+        </div>
+
+        <!-- All Rejected Cards  -->
+        <div id="RejectedCardElement">
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+  </main>
+
 
 </body>
 
